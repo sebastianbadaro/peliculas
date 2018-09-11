@@ -26,7 +26,7 @@ Route::post('/agregarPelicula', 'PeliculasController@AgregarPelicula');
 // -ACTORES
 Route::get('/actores/{id}', 'ActoresController@show');
 
-Route::get('/actores/{id}/editar', 'ActoresController@edit');
+Route::get('/actores/{actor}/editar', 'ActoresController@edit');
 
 Route::put('/actores/{id}/editar', 'ActoresController@update');
 

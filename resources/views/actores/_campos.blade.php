@@ -18,7 +18,7 @@
     <select name="favorite_movie_id">
       @foreach($peliculas as $pelicula)
         <option value="{{ old('favorite_movie_id', $pelicula->id) }}"
-          @if($pelicula->id == old('favorite_movie_id'))
+          @if($pelicula->id == old('favorite_movie_id',$actor->favorite_movie_id))
             selected
           @endif
           >{{ $pelicula->title }}</option>

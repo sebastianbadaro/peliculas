@@ -63,9 +63,9 @@ class ActoresController extends Controller
       return redirect('/actores');
     }
 
-    public function edit($id) //Inyeccion de dependencias? como usar?
+    public function edit(Actor $actor) //Inyeccion de dependencias? como usar?
     {
-      $actor = Actor::findorfail($id);
+
       $peliculas = Movie::all();
       return view('actores.editarActor',compact('peliculas','actor'));
     }
@@ -93,13 +93,13 @@ class ActoresController extends Controller
       $actor =  Actor::findorfail($id);
       $actor->fill($request->all());
       $actor->save();
-      return redirect('/actores/'.$id); // no actualiza la pelicula favorita.
+      return redirect('/actores/'.$id);
     }
 
     public function destroy($id)
     {
       $actor =  Actor::findorfail($id);
       $actor->delete();
-      return redirect('/actores'); //que hago con los errores de integridad de la base???
+      return redirect('/actores'); 
     }
 }
