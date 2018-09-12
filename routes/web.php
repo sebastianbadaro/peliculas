@@ -46,13 +46,6 @@ Route::get('/genres/{id}', 'GenresController@show');
 
 
 
-
-
-
-
-
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -66,3 +59,7 @@ if ($numero%2==0) {
 }
   return "Impar";
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -49,7 +49,7 @@ class ActoresController extends Controller
 
           ],
           [
-             'titulo.required' => 'Eh loco, completá el titulo'
+             'titulo.required' =>  'Eh loco, completá el titulo'
           ],
           [
               'titulo' => 'tiiitulo'
@@ -63,7 +63,7 @@ class ActoresController extends Controller
       return redirect('/actores');
     }
 
-    public function edit(Actor $actor) //Inyeccion de dependencias? como usar?
+    public function edit(Actor $actor)
     {
 
       $peliculas = Movie::all();
@@ -100,6 +100,6 @@ class ActoresController extends Controller
     {
       $actor =  Actor::findorfail($id);
       $actor->delete();
-      return redirect('/actores'); 
+      return redirect('/actores');
     }
 }
