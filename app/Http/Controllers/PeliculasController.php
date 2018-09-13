@@ -25,7 +25,7 @@ class PeliculasController extends Controller
 
 public function MostrarPeliculas()
 {
-  $peliculas = Movie::all();
+  $peliculas = Movie::paginate(10);
   return  view('peliculas.peliculas', compact('peliculas'));	// Envia a una vista con el nombre peliculas el parametro peiculas
 }
 

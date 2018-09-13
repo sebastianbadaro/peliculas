@@ -1,14 +1,15 @@
-@extends('layout')
-
-
-@section('title')
-Editar Actor
-@endsection
+@extends('layouts.app')
 
 
 
-@section('body')
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Pelicula</div>
 
+                <div class="panel-body">
 <div class="errores">
   <ul>
     @foreach($errors->all() as $error)
@@ -28,6 +29,10 @@ Editar Actor
         <input type="submit" value="Editar Actor" name="submit"/>
     </form>
 
-
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
 
 @endsection

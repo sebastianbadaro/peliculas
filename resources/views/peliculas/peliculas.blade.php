@@ -1,12 +1,24 @@
-@extends('layout')
+@extends('layouts.app')
 
-@section('title')
-Peliculas
-@endsection
 
-@section('body')
 
-{{ $genre->name or 'Todas la peliculas' }}
+@section('content')
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ $genre->name or 'Todas la peliculas' }}
+                    <div class="">
+                      <form method="get" action="/agregarPelicula">
+                           <button type="submit">Agregar Pelicula</button>
+                      </form>
+                    </div>
+                  </div>
+
+                <div class="panel-body">
+
 
     @forelse($peliculas as $pelicula)
   		<div><a href="peliculas/{{ $pelicula->id}}">{{ $pelicula->title}}</a></div>
@@ -22,4 +34,11 @@ Peliculas
   <!-- <div class=""> -->
     <!-- <?php endforeach; ?> -->
 
+{{$peliculas->links()}}
+
+  </div>
+</div>
+</div>
+</div>
+</div>
 @endsection

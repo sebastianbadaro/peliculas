@@ -34,6 +34,7 @@ class ActoresController extends Controller
     {
       $actor = new Actor();
       $peliculas = Movie::all();
+
       return view('actores.nuevoActor',compact('peliculas','actor'));
     }
 

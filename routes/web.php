@@ -30,9 +30,11 @@ Route::get('/actores/{actor}/editar', 'ActoresController@edit');
 
 Route::put('/actores/{id}/editar', 'ActoresController@update');
 
+Route::get('/actores/agregar', 'ActoresController@nuevoActor');
+
 Route::post('/actores/agregar', 'ActoresController@agregarActor');
 
-Route::get('/actores/agregar', 'ActoresController@nuevoActor');
+
 
 Route::get('/actores/', 'ActoresController@directory');
 
