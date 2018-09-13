@@ -1,13 +1,16 @@
-@extends('layout')
-
-
-@section('title')
-Agregar Actor
-@endsection
+@extends('layouts.app')
 
 
 
-@section('body')
+@section('content')
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Actor</div>
+
+                <div class="panel-body">
 
 <div class="errores">
   <ul>
@@ -24,7 +27,11 @@ Agregar Actor
 
         <input type="submit" value="Agregar Actor" name="submit"/>
     </form>
-
+  </div>
+</div>
+</div>
+</div>
+</div>
 
 
 @endsection

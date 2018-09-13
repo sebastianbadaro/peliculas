@@ -25,7 +25,7 @@ class ActoresController extends Controller
     {
       $search = '%'.$request->input('searchstring').'%';
 
-     $actores = Actor::where('first_name','like',$search)->orwhere('last_name','like',$search)->get();
+     $actores = Actor::where('first_name','like',$search)->orwhere('last_name','like',$search)->paginate(10);
       return view('actores.actores',compact('actores'));
 
     }

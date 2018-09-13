@@ -22,24 +22,24 @@
                         <form id="agregarPelicula" name="agregarPelicula" method="POST">
                           {{ csrf_field() }}
                             <div>
-                                <label for="titulo">Titulo</label>
-                                <input type="text" name="titulo" id="titulo" value="{{ old('titulo')}}"/>
+                                <label for="title">Titulo</label>
+                                <input type="text" name="title" id="title" value="{{ old('title')}}"/>
                             </div>
                             <div>
                                 <label for="rating">Rating</label>
                                 <input type="text" name="rating" id="rating" value="{{ old('rating')}}" />
                             </div>
                             <div>
-                                <label for="premios">Premios</label>
-                                <input type="text" name="premios" id="premios" value="{{ old('premios')}}"/>
+                                <label for="awards">Premios</label>
+                                <input type="text" name="awards" id="awards" value="{{ old('awards')}}"/>
                             </div>
                             <div>
-                                <label for="duracion">Duracion</label>
-                                <input type="text" name="duracion" id="duracion" value="{{ old('duracion')}}"/>
+                                <label for="length">Duracion</label>
+                                <input type="text" name="length" id="length" value="{{ old('length')}}"/>
                             </div>
                             <div>
                                 <label for="genre_id">Duracion</label>
-                                <select class="" name="gnre_id">
+                                <select class="" name="genre_id">
                                 @foreach($genres as $genre)
 
                                   <option
@@ -55,45 +55,7 @@
                             </div>
                             <div>
                                 <label>Fecha de Estreno</label>
-                                <select name="dia">
-                                    <option value="">Dia</option>
-                                    <?php for ($i=1; $i < 32; $i++) { ?>
-                                        <option
-
-                                        @if($i == old('dia'))
-                                        selected
-                                        @endif
-
-                                         value="<?php echo $i; ?>" onload=""><?php echo $i; ?></option>
-                                    <?php } ?>
-                                </select>
-
-                                <select name="mes">
-                                    <option
-
-                                              value="">Mes</option>
-                                    <?php for ($i=1; $i < 13; $i++) { ?>
-                                        <option
-
-                                        @if($i == old('mes'))
-                                        selected
-                                        @endif
-
-                                         value="<?php echo $i; ?>"><?php echo $i; ?></option>
-                                    <?php } ?>
-                                </select>
-                                <select name="anio">
-                                    <option  value="">Anio</option>
-                                    <?php for ($i=1900; $i < 2017; $i++) { ?>
-                                        <option
-
-                                        @if($i == old('anio'))
-                                        selected
-                                        @endif
-
-                                        value="<?php echo $i; ?>"><?php echo $i; ?></option>
-                                    <?php } ?>
-                                </select>
+                                <input type="date" name="release_date" value="{{ old('release_date')}"/>
                             </div>
                             <input type="submit" value="Agregar Pelicula" name="submit"/>
                         </form>

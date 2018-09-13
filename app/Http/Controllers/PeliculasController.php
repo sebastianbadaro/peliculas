@@ -51,23 +51,26 @@ public function MostrarPeliculas()
       $this->validate(
           $request,
           [
-              'titulo' => 'required|max:60',
+              'title' => 'required|max:60',
               'rating' => 'required|max:10|min:0|numeric',
-              'premios' => 'required|max:10|min:0|numeric',
-              'duracion' => 'required|max:999|numeric',
-              'mes' => 'required|max:12|min:1 |numeric',
-              'anio' => 'required|numeric|min:1900',
-              'dia' => 'required|max:31| min:1|numeric'
+              'awards' => 'required|max:10|min:0|numeric',
+              'length' => 'required|max:999|numeric',
+              'release_date' => 'required||date',
+              'genre_id' => 'required||exists:genres,id',
+
           ],
           [
              'titulo.required' => 'Eh loco, completá el titulo'
           ],
           [
-              'titulo' => 'tiiitulo'
+              'release_date' => 'fecha de estreno'
           ]
       );//no entiendo el fucnionamiento de esto.Cuando manda los errores??
+      $pelicula = new Movie();
+      $pelicula->fill($request->all());
+      $pelicula->save();
 
-
+      return redirect('/peliculas');
       return "Pelicula agregada con exito.";
     }
 

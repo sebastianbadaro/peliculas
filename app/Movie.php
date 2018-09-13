@@ -7,6 +7,8 @@ use App\Genre;
 use App\Actor;
 class Movie extends Model
 {
+  protected $fillable = ['title' ,  'rating' ,  'awards',  'length' ,'release_date','genre_id' ];
+
   public function genre()
   {
     return $this->belongsTo(Genre::class);
