@@ -34,7 +34,7 @@ Route::get('/actores/agregar', 'ActoresController@nuevoActor');
 
 Route::post('/actores/agregar', 'ActoresController@agregarActor');
 
-Route::get('/actores/', 'ActoresController@directory');
+Route::get('/actores/', 'ActoresController@directory');//->middleware('caidopormantenimiento');
 
 Route::get('/actores/{id}', 'ActoresController@show');
 

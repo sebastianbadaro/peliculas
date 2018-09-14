@@ -10,13 +10,16 @@ ACTOR
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Actores</div>
-                <div class="">
+                <div class="panel-heading">Actores
+
                   <form class="" action="/actores/agregar" method="post">
                     {{ csrf_field() }}
                     {{ method_field('get') }}
                       <button type="submit">Agregar actor</button>
                   </form>
+                </div>
+                <div class="">
+
                 </div>
                 <div class="panel-body">
 
